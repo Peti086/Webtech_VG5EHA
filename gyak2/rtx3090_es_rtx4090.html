@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RTX 3090 vs RTX 4090</title>
+<link rel="icon" type="image/x-icon" href="small.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Az RTX 3090 és RTX 4090 összehasonlítása</h1>
+
+<h6><a href="#Vége">(Ugrás a végéhez!)</a></h6>
+
+<p>Ebben rövid kis cikkben az RTX 3090 és RTX az 4090 videokártyákat akarom összhasonlitani, és ezzel szeretném érzékeltetni, hogy mekkora különbség lehet két egymás után lévő generáció között. 
+    Röviden, de legfontosabb adatokra fogok kitérni.</p>
+
+<h2>A 2 videokártya tulajdonságai röviden (A képeken lévő linkek a videokártyák hivatalos oldalára irányítanak.) :</h2>
+
+<table style="width: 100%;">
+    <colgroup>
+        
+    </colgroup>
+    <tr>
+      <th>Részegységek</th>
+      <th><br>RTX 3090</br>
+        <a href="https://www.nvidia.com/en-eu/geforce/graphics-cards/30-series/rtx-3090-3090ti/" target="_blank">
+            <img src="rtx3090.jpg" alt="RTX 3090 kép" style="width: 450px;height: 220px;">
+          </a>
+      </th>
+      <th><br> RTX 4090 </br>
+        <a href="https://www.nvidia.com/en-eu/geforce/graphics-cards/40-series/rtx-4090/" target="_blank">
+            <img src="rtx4090.png" alt="RTX 4090 kép" style="width: 450px;height: 220px;">
+          </a>
+      </th>
+    </tr>
+    <tr>
+      <td><b>Architektúra</b></td>
+      <td>Ampere</td>
+      <td>Ada</td>
+    </tr>
+    <tr>
+        <td>Processzor</td>
+        <td>GA102</td>
+        <td>AD102</td>
+    </tr>
+    <tr>
+      <td><b>Gyártási technológia</b></td>
+      <td>Samsung 8nm</td>
+      <td>TSMC 4nm</td>
+    </tr>
+    <tr>
+        <td><b>CUDA magok</b></td>
+        <td>10496</td>
+        <td>16384</td>
+      </tr>
+    <tr>
+        <td><b>RT magok</b></td>
+        <td>82 (2. generáció)</td>
+        <td>128 (3. generáció)</td>
+    </tr>
+    <tr>
+        <td><b>Tensor magok</b></td>
+        <td>328 (3. generáció)</td>
+        <td>512 (4. generáció)</td>
+    </tr>
+    <tr>
+        <td><b>GPU Boost órajel</b></td>
+        <td>1695 MHz</td>
+        <td>2520 MHz</td>
+    </tr>
+    <tr>
+        <td><b>Memória</b></td>
+        <td>24 GB GDDR6X</td>
+        <td>24 GB GDDR6X</td>
+    </tr>
+    <tr>
+        <td><b>Memória busz szélesség</b></td>
+        <td>384-bit</td>
+        <td>384-bit</td>
+    </tr>
+    <tr>
+        <td><b>Tranzisztorok</b></td>
+        <td>28.3 milliárd</td>
+        <td>76.3 milliárd</td>
+    </tr>
+    <tr>
+        <td><b>Kijelző csatlakozások</b></td>
+        <td>3db DP 1.4a, 1db HDMI 2.1</td>
+        <td>3db DP 1.4a, 1db HDMI 2.1</td>
+    </tr>
+    <tr>
+        <td><b>TDP</b></td>
+        <td>350W</td>
+        <td>450W</td>
+    </tr>
+    <tr>
+        <td><b>Ár</b></td>
+        <td>1500$ MSRP</td>
+        <td>1600$ MSRP</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+<p>Áttekintve ezt a táblázatot láthatjuk, hogy jelentős lépések voltak az előző generációhoz képest. Ezt szeretném így gyorsan összegezve leírni:</p>
+
+<ol>
+    <li>A gyártási technológia.</li>
+    <li>CUDA magok <b>1.5-szeresére</b> növekedett.</li>
+    <li>RT magok és Tensor magok is jelentősen <b><i>"megszaporodtak"</i></b> és új generációsak.</li>
+    <li>Az órajel jelentősen magasabb lett, ami már nagyjából a cpu-k órajele is lehet. A kártyáról érdemes tudni, hogy jól oc-zható, ami által 
+        <b>3 GHz-re</b> is lehet vinni, amiről eddig soha nem tudtunk álmodni sem.</li>
+    <li>A tranzisztorok mennyisége kb <b>2.5-szer</b> több.</li>
+    <li>Bár a <b>TDP 350W-ról 450W-ra</b> emelkedett, ami nem igazán pozitív tulajdonság, de még is ide írom, mert figyelembe véve mennyivel több mag 
+        található benne és mennyivel nagyobb az órajele, ahhoz képest elég alacsony a fogyasztás növekedés. Így azt lehet rá mondani, hogy power efficient.</li>
+    <li>Érdekességként leírom ide, hogy habár a 3090-nél hírdették, hogy <b>8k</b> felbontáson is képes játékokat futtatni, sajna nem igazán lett igaz. Viszont a 4090 képes már rá,
+         persze azért nem mindenféle ray tracing beállításokkal, az "megmaradt" a <b>4k</b> felbontásra.</li>
+    <li>Amit a táblázatban nem említettem meg az még a jobb AI képessége. Ezt a játékokba egy új technológiával akarták behozni, 
+         ami a Frame Generation, azaz DLSS 3. Ez röviden <i>"hamis"</i> képeket generál a képek közé az AI segítségével, így csökkentve az <i>"igazi"</i> képek mennyiségét. Ez csökkenti a kártyára és cpu-ra eső terhet,
+         ami által magasabb fps-t érhetünk el. Egyetlen hátránya, hogy ez egy minimális input lagot okoz.</li>
+</ol>
+
+<p>Ezek mind szép és jók, de a kártyát még sem lehet egyértelmű választásnak mondani:</p>
+
+<ul>
+    <li>Az ára borzasztóan sok és keményen túlárazott. Ez sajna az egész 4000-es szériára mondható.</li>
+    <li>Egy új fajta tápcsatlakozót hoztak be, amiről már sok rosszt hírt lehetetett hallani, hogy leég. Ez sorozatosan történik.</li>
+    <li>Szomorú tényező, de igaz, hogy ez és az RTX 4080 hozott csak rendes generációs lépést, de nagyon drágák, így nem sokan tudják megvenni. Összesítve ez a generáció nem éri meg.</li>
+</ul>
+
+<p>Viszont ha még is amellett döntenénk, hogy ilyet akarunk venni, nagyon érdemes körülnézni többféle nevezetes oldalon, fórumokon, hogy mik a vélemények, továbbá a meglátások a kártyával kapcsolatosan.
+     Nagyon sokat tudnak segíteni a videók is, mert megtudjuk nézni mit is tud valójában a kártya<b> (Fontoss!! Ne csak az NVIDIA oldalán nézzük, mert ott sok minden simán csak marketing lehet!)</b>. 
+     Ilyen például egy ilyen videó:</p>
+
+<iframe  width="720" height="480"  style="border: none" src="https://www.youtube.com/embed/j9vC9NBL8zo"></iframe>
+
+<p id="Vége">További információkat <a href="the_end.html" target="_blank">itt</a> találhat még.</p>
