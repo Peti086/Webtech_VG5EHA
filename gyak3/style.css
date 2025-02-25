@@ -1,0 +1,47 @@
+h1 {
+    font-size: 55px;
+    text-decoration: underline;
+    font-style: italic;
+    text-align: center;
+}
+
+body {
+    text-align: justify;
+}
+
+#idezet{
+    text-align: right;
+    font-style: italic;
+    line-height: 25%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.bold_italic{
+    font-weight: bold;
+    font-style: italic;
+}
+
+#eletrajz{
+    width: 50%;;
+    background-color: lightgray;
+    border: 2px black;
+    border-radius: 5px;
+    text-align: start;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-style: solid;
+}
+
+h2{
+    text-align: center;
+    background-color: gray;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-size: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
