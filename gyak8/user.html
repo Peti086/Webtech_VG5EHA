@@ -45,8 +45,8 @@
 
                 const data = await res.json();
                 displayUser(data);
-                loadProfileInf(data);
-                loadStat(data);
+                displayProfileInf(data);
+                displayStat(data);
             } catch (err) {
                 if (typeof err == 'string') {
                     alert(err);
@@ -55,7 +55,7 @@
             }
         }
 
-        function loadProfileInf(prof){
+        function displayProfileInf(prof){
             const bioElem = document.querySelector('#bio');
             if(prof.bio){
                 bioElem.innerHTML = `<strong>Bio:</strong> ` + prof.bio;
@@ -73,7 +73,7 @@
             }
         }
 
-        function loadStat(stat){
+        function displayStat(stat){
             const reposElem = document.querySelector('#repos');
             reposElem.innerHTML = `<strong>Public Repositories:</strong> ` + stat.public_repos;
 
