@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git App - User Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="user-header">
+        <img id="avatar" src="" alt="User avatar" style="width: 100px; height: 100px; border-radius: 50%;">
+        <h4 id="name"></h4>
+        <p id="login"></p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Profile Information</h4>
+                <p id="bio"></p>
+                <p id="location"></p>
+                <p id="blog"></p>
+            </div>
+            <div class="col">
+                <h4>Statistics</h4>
+                <p id="repos"></p>
+                <p id="followers"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        async function loadUser(username) {
+            try {
+                const res = await fetch(`https://api.github.com/users/${username}`, {
+                    headers: {
+                        'Authorization': 'Bearer ' + GITHUB_ACCESS_TOKEN
+                    }
+                });
+
+                if (!res.ok) {
+                    throw 'Server error occurred, status code: ' + res.status;
+                }
+
+                const data = await res.json();
+                displayUser(data);
+                loadProfileInf(data);
+                loadStat(data);
+            } catch (err) {
+                if (typeof err == 'string') {
+                    alert(err);
+                }
+                console.error(err);
+            }
+        }
+
+        function loadProfileInf(prof){
+            const bioElem = document.querySelector('#bio');
+            if(prof.bio){
+                bioElem.innerHTML = `<strong>Bio:</strong> ` + prof.bio;
+            }
+
+            const locationElem = document.querySelector("#location");
+            if(prof.location){
+                locationElem.innerHTML = `<strong>Location:</strong> ` + prof.location;
+            }
+
+            const blogElem = document.querySelector("#blog");
+            if (prof.blog) {
+                const blogUrl = prof.blog.startsWith('http') ? prof.blog : `https://${prof.blog}`;
+                blogElem.innerHTML = `<strong>Website:</strong> <a href="${blogUrl}" target="_blank">${prof.blog}</a>`;
+            }
+        }
+
+        function loadStat(stat){
+            const reposElem = document.querySelector('#repos');
+            reposElem.innerHTML = `<strong>Public Repositories:</strong> ` + stat.public_repos;
+
+            const followersElem = document.querySelector('#followers');
+            followersElem.innerHTML = `<strong>Followers:</strong> ` + stat.followers;
+        }
+
+        function displayUser(user) {
+            const avatarElem = document.querySelector('#avatar');
+            avatarElem.src = user.avatar_url;
+
+            const nameElem = document.querySelector('#name');
+            if (user.name) {
+                nameElem.textContent = user.name;
+            }
+
+            const loginElem = document.querySelector('#login');
+            loginElem.innerHTML = `<a href="${user.html_url}" target="_blank">@${user.login}</a>`;
+
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get('name');
+
+        if (!username) {
+            window.location = 'index.html';
+        }
+
+        loadUser(username);
+    </script>
+</body>
+</html>
